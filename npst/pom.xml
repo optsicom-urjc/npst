@@ -47,20 +47,12 @@
 	
 	<developers>
 		<developer>
-			<name>Micael Gallego</name>
-			<url>https://github.com/micaelgallego</url>
+			<name>SCI2s Research Group</name>
+			<url>http://sci2s.ugr.es/</url>
 		</developer>
 		<developer>
-			<name>Patxi Gortázar</name>
-			<url>https://github.com/gortazar</url>
-		</developer>
-		<developer>
-			<name>Anthanh Pham Trim</name>
-			<url>https://github.com/anthanh</url>
-		</developer>
-		<developer>
-			<name>Rubén Carrasco</name>
-			<url>https://github.com/rubensegovia</url>
+			<name>Optsicom Research Group</name>
+			<url>http://www.optsicom.es</url>
 		</developer>
 	</developers>
 
