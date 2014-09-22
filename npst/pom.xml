@@ -94,6 +94,9 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<encoding>ISO-8859-1</encoding>
+				</configuration>
 			</plugin>
 
 			<plugin>
