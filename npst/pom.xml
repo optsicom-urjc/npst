@@ -11,8 +11,8 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-		<github.repo>git@github.com:optsicom/optsicom-npst.git</github.repo>
-		<github.url>https://github.com/optsicom/optsicom-npst</github.url>
+		<github.repo>git@github.com:optsicom/npst.git</github.repo>
+		<github.url>https://github.com/optsicom/npst</github.url>
 	</properties>
 
 	<name>JavaNPST</name>
