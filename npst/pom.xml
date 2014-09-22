@@ -1,15 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>es.optsicom</groupId>
-  <artifactId>npst</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<groupId>es.optsicom</groupId>
+	<artifactId>npst</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 	<properties>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
+		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<github.repo>git@github.com:optsicom/optsicom-npst.git</github.repo>
 		<github.url>https://github.com/optsicom/optsicom-npst</github.url>
 	</properties>
@@ -17,7 +18,7 @@
 	<name>JavaNPST</name>
 	<description>Non parametric statistical tests in java</description>
 	<url>${github.url}</url>
-	
+
 	<issueManagement>
 		<system>Github</system>
 		<url>${github.url}/issues</url>
@@ -27,13 +28,14 @@
 		<developerConnection>scm:git:${github.repo}</developerConnection>
 		<connection>scm:git:${github.repo}</connection>
 		<url>${github.url}</url>
-  </scm>
+		<tag>npst-0.1.0</tag>
+	</scm>
 
 	<organization>
 		<name>Optsicom</name>
 		<url>http://www.optsicom.es</url>
 	</organization>
-	
+
 	<licenses>
 		<license>
 			<name>Eclipse Public License v1.0</name>
@@ -44,7 +46,7 @@
 			<url>http://www.gnu.org/copyleft/gpl.html</url>
 		</license>
 	</licenses>
-	
+
 	<developers>
 		<developer>
 			<name>SCI2s Research Group</name>
@@ -56,32 +58,14 @@
 		</developer>
 	</developers>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.eclipse.persistence</groupId>
-				<artifactId>javax.persistence</artifactId>
-				<version>2.1.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.eclipse.persistence</groupId>
-				<artifactId>eclipselink</artifactId>
-				<version>2.5.2</version>
-			</dependency>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.8.1</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-				<version>13.0.1</version>
-			</dependency>
-
-		</dependencies>
-	</dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<pluginManagement>
@@ -127,111 +111,7 @@
 						</execution>
 					</executions>
 				</plugin>
-				
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>2.3.1</version>
-					<configuration>
-						<tagBase>https://code.sidelab.es/svn/optsicomsuite/framework/tags</tagBase>
-					</configuration>
-				</plugin>
-
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>1.5</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.3.2</version>
-					<configuration>
-						<source>1.7</source>
-						<target>1.7</target>
-						<encoding>UTF-8</encoding>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>2.5</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>2.3.1</version>
-					<configuration>
-						<archive>
-							<manifestEntries>
-								<Implementation-Title>Optsicom ${project.artifactId}</Implementation-Title>
-								<Implementation-Version>${project.version}</Implementation-Version>
-								<Implementation-Vendor>Optsicom</Implementation-Vendor>
-								<Implementation-Vendor-URL>www.optsicom.es</Implementation-Vendor-URL>
-							</manifestEntries>
-						</archive>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>3.0-beta-3</version>
-					<configuration>
-						<reportPlugins>
-							<plugin>
-								<groupId>org.apache.maven.plugins</groupId>
-								<artifactId>maven-project-info-reports-plugin</artifactId>
-								<version>2.2</version>
-								<reportSets>
-									<reportSet>
-										<reports>
-											<report>index</report>
-											<report>dependencies</report>
-											<report>dependency-management</report>
-											<report>project-team</report>
-											<report>scm</report>
-											<report>summary</report>
-											<report>plugin-management</report>
-										</reports>
-									</reportSet>
-								</reportSets>
-							</plugin>
-							<plugin>
-								<groupId>org.apache.maven.plugins</groupId>
-								<artifactId>maven-surefire-report-plugin</artifactId>
-								<version>2.4.3</version>
-							</plugin>
-							<plugin>
-								<artifactId>maven-javadoc-plugin</artifactId>
-								<version>2.6.1</version>
-								<configuration>
-									<goal>aggregate</goal>
-								</configuration>
-							</plugin>
-							<plugin>
-								<groupId>org.apache.maven.plugins</groupId>
-								<artifactId>maven-checkstyle-plugin</artifactId>
-								<version>2.6</version>
-							</plugin>
-							<plugin>
-								<groupId>org.apache.maven.plugins</groupId>
-								<artifactId>maven-pmd-plugin</artifactId>
-								<version>2.5</version>
-								<configuration>
-									<targetJdk>1.6</targetJdk>
-								</configuration>
-							</plugin>
-							<plugin>
-								<groupId>org.codehaus.mojo</groupId>
-								<artifactId>findbugs-maven-plugin</artifactId>
-								<version>2.3.2</version>
-								<configuration>
-									<xmlOutput>true</xmlOutput>
-								</configuration>
-							</plugin>
-						</reportPlugins>
-					</configuration>
-				</plugin>
 			</plugins>
 		</pluginManagement>
-	</build></project>
+	</build>
+</project>
